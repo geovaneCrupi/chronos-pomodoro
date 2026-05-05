@@ -5,7 +5,6 @@ import './styles/global.css';
 
 
 export function App() {
-    console.log('Oi');
     return (
         <>
             <Heading attr={123} attr2='String'>Olá mundo 1</Heading>
