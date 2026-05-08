@@ -23,7 +23,7 @@ export function App() {
             <Container>
                 <form action="" className="form">
                     <div className="formRow">
-                        <DefaultInput labelText='task' id="meuInput" type="text" />
+                        <DefaultInput labelText='task' id="meuInput" placeholder='Digite uma tarefa' type="text" />
                     </div>
                     <div className="formRow">
                         <p>Lorem ipsum dolor sit amet.</p>
