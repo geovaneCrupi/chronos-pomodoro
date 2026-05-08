@@ -10,28 +10,11 @@ import { Cycles } from './components/Cycles';
 import { DefaultButton } from './components/DefaultButton';
 import { PlayCircleIcon } from 'lucide-react';
 import { Footer } from './components/Footer';
-import { Heading } from './components/Heading';
-import { useState } from 'react';
 
 export function App() {
 
-//todos os componentes que usam "variável"
-//saibam das mudanças do seu valor
-//sempre que usar useStat, não usa atribuição diretamente 
-// const [numero, setNumero] = useState(() => {
-//     console.log('lazy initialization');
-//     return 0;
-// });
-
-const [numero, setNumero] = useState(0);
-
-function handleClick(){
-  setNumero(prevState => prevState + 1);
-}
     return (
         <>
-            <Heading>Número: {numero}</Heading>
-            <button onClick={handleClick}>Aumenta</button>
             <Container>
                 <Logo></Logo>
             </Container>
@@ -44,7 +27,7 @@ function handleClick(){
             <Container>
                 <form action="" className="form">
                     <div className="formRow">
-                        <DefaultInput labelText={numero.toString()} id="meuInput" placeholder='Digite uma tarefa' type="text" />
+                        <DefaultInput labelText='task' id="meuInput" placeholder='Digite uma tarefa' type="text" />
                     </div>
                     <div className="formRow">
                         <p>Lorem ipsum dolor sit amet.</p>
