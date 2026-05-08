@@ -18,11 +18,15 @@ export function App() {
 //todos os componentes que usam "variável"
 //saibam das mudanças do seu valor
 //sempre que usar useStat, não usa atribuição diretamente 
+// const [numero, setNumero] = useState(() => {
+//     console.log('lazy initialization');
+//     return 0;
+// });
 
-const [numero, configurarNumero] = useState(0);
+const [numero, setNumero] = useState(0);
 
 function handleClick(){
-  configurarNumero(numero + 1);
+  setNumero(prevState => prevState + 1);
 }
     return (
         <>
