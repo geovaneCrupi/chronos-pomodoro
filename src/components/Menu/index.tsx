@@ -11,12 +11,20 @@ export function Menu() {
     function handleThemeChange(
         event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     ) {
-        event.preventDefault();
+        event.preventDefault(); // Não segue o link
         console.log('Clicado', Date.now());
+
+        setTheme(prevTheme => {
+            const nextTheme = prevTheme === 'dark' ? 'light' : 'dark';
+            return nextTheme;
+        })
+
+        //document.documentElement.setAttribute('data-theme' , theme);
     }
 
     return (
     <div className={styles.menu}>
+        <h1>{theme}</h1>
         <a href="" className={styles.menuLink} aria-label="Ir para a Home" title="Ir para a Home">
             <HouseIcon />
         </a>
