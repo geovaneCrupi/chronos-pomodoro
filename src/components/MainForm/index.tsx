@@ -2,15 +2,16 @@ import { PlayCircleIcon } from "lucide-react";
 import { Cycles } from "../Cycles";
 import { DefaultButton } from "../DefaultButton";
 import { DefaultInput } from "../DefaultInput";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export function MainForm() {
 
     const [taskName, setTaskName] = useState('');
+    const taskNameInput = useRef<HTMLInputElement>(null);
 
     function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
-        console.log('DEU CERTO');
+        console.log('DEU CERTO', taskName, taskNameInput.current.value);
     }
 
     return (
@@ -22,8 +23,9 @@ export function MainForm() {
                 id="meuInput" 
                 placeholder='Digite uma tarefa' 
                 type="text" 
-                value= {taskName}
-                onChange={e => setTaskName(e.target.value)} />
+                // value= {taskName}
+                // onChange={e => setTaskName(e.target.value)}
+                ref={taskNameInput} />
             </div>
             <div className="formRow">
                 <p>Próximo intervalo é de 25min</p>
